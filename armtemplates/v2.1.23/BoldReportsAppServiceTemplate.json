@@ -1,0 +1,34 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "WebAppName": {
+      "type": "string",
+      "maxLength": 24,
+      "minLength": 3,
+      "metadata": {
+        "description": "App name for Bold Reports Server. The name must be between 3 and 24 characters long, and can contain only numbers and lowercase letters."
+      }
+    }
+  },
+  "variables": {
+    "templatelink": "https://raw.githubusercontent.com/praveenganesan/boldreportstemplate/master/armtemplates/v2.1.23/AzureBlobStorage-BoldReports.json"
+  },
+  "resources": [
+    {
+      "apiVersion": "2015-01-01",
+      "name": "AzureBlobStorage-BoldReports.json",
+      "type": "Microsoft.Resources/deployments",
+      "properties": {
+        "mode": "Incremental",
+        "templateLink": {
+          "uri": "[variables('templatelink')]",
+          "contentVersion": "1.0.0.0"
+        },
+        "parameters": {
+          "WebAppName": { "value": "[parameters('WebAppName')]" }
+        }
+      }
+    }
+  ]
+}
