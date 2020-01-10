@@ -1,0 +1,6 @@
+ALTER TABLE [BOLDTC_UserLogin] ADD DirectoryTypeId int not null
+;
+ALTER TABLE [BOLDTC_UserLogin] WITH CHECK ADD CONSTRAINT [BOLDTC_UserLogin_fk1] FOREIGN KEY ([DirectoryTypeId]) REFERENCES [BOLDTC_DirectoryType]([Id])
+;
+ALTER TABLE [BOLDTC_UserLogin] CHECK CONSTRAINT [BOLDTC_UserLogin_fk1]
+;

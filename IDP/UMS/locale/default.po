@@ -1,0 +1,100 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"POT-Creation-Date: 2018-02-16 04:44+05:30\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.0.3\n"
+"PO-Revision-Date: \n"
+"Language-Team: \n"
+"Last-Translator: \n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Language: en_US\n"
+
+#: Views\Error\AccessDeniedWithoutLayout.cshtml:21
+#: obj\Debug\Package\PackageTmp\Views\Error\AccessDeniedWithoutLayout.cshtml:21
+msgid "Access Denied"
+msgstr ""
+
+#: Views\Error\ConnectionError.cshtml:27
+#: obj\Debug\Package\PackageTmp\Views\Error\ConnectionError.cshtml:27
+msgid "Connection Error"
+msgstr ""
+
+#: Views\Error\ConnectionError.cshtml:30
+#: obj\Debug\Package\PackageTmp\Views\Error\ConnectionError.cshtml:30
+msgid "Error establishing a connection."
+msgstr ""
+
+#: Views\Error\UmsConnectionError.cshtml:30
+#: obj\Debug\Package\PackageTmp\Views\Error\UmsConnectionError.cshtml:30
+msgid "Error establishing a IdP connection."
+msgstr ""
+
+#: Views\Error\UmsConnectionError.cshtml:27
+#: obj\Debug\Package\PackageTmp\Views\Error\UmsConnectionError.cshtml:27
+msgid "IdP Connection Error"
+msgstr ""
+
+#: Views\Error\ConnectionError.cshtml:38
+#: obj\Debug\Package\PackageTmp\Views\Error\ConnectionError.cshtml:38
+msgid ""
+"If the issue still persist, create a <a href=\"https://www.syncfusion.com/"
+"support/directtrac/incidents/newincident\" target=\"_blank\">support "
+"incident.</a>"
+msgstr ""
+
+#: Views\Error\UmsConnectionError.cshtml:35
+#: obj\Debug\Package\PackageTmp\Views\Error\UmsConnectionError.cshtml:35
+msgid "If you are an administrator configure the IdP settings properly."
+msgstr ""
+
+#: Views\Error\UmsConnectionError.cshtml:34
+#: obj\Debug\Package\PackageTmp\Views\Error\UmsConnectionError.cshtml:34
+msgid "Please contact administrator to resolve this issue."
+msgstr ""
+
+#: Views\Error\ConnectionError.cshtml:31
+#: Views\Error\UmsConnectionError.cshtml:31
+#: obj\Debug\Package\PackageTmp\Views\Error\ConnectionError.cshtml:31
+#: obj\Debug\Package\PackageTmp\Views\Error\UmsConnectionError.cshtml:31
+msgid "Possible causes:"
+msgstr ""
+
+#: Views\Error\ConnectionError.cshtml:33
+#: Views\Error\UmsConnectionError.cshtml:33
+#: obj\Debug\Package\PackageTmp\Views\Error\ConnectionError.cshtml:33
+#: obj\Debug\Package\PackageTmp\Views\Error\UmsConnectionError.cshtml:33
+msgid "Server might be down."
+msgstr ""
+
+#: Views\Error\AccessDeniedWithoutLayout.cshtml:8
+#: obj\Debug\Package\PackageTmp\Views\Error\AccessDeniedWithoutLayout.cshtml:8
+msgid "Syncfusion Dasboard Server - Access Denied"
+msgstr ""
+
+#: Views\Error\UmsConnectionError.cshtml:8
+#: obj\Debug\Package\PackageTmp\Views\Error\UmsConnectionError.cshtml:8
+msgid "Syncfusion Dasboard Server - IdP Connection Error"
+msgstr ""
+
+#: Views\Error\ConnectionError.cshtml:35
+#: obj\Debug\Package\PackageTmp\Views\Error\ConnectionError.cshtml:35
+msgid "Things you may try:"
+msgstr ""
+
+#: Views\Error\ConnectionError.cshtml:8
+#: obj\Debug\Package\PackageTmp\Views\Error\ConnectionError.cshtml:8
+msgid "Try - Dashboard Platform | Connection Error"
+msgstr ""
+
+#: Views\Error\ConnectionError.cshtml:37
+#: obj\Debug\Package\PackageTmp\Views\Error\ConnectionError.cshtml:37
+msgid "Try again after sometime."
+msgstr ""
+
+#: Views\Error\AccessDeniedWithoutLayout.cshtml:23
+#: obj\Debug\Package\PackageTmp\Views\Error\AccessDeniedWithoutLayout.cshtml:23
+msgid "You dont have access to the current application."
+msgstr ""

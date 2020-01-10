@@ -1,0 +1,29 @@
+﻿@model TenantInfo
+@{
+    var tenantImageType = (TenantType)Model.TenantTypeId == TenantType.BoldBIOnPremise ? AppBranding.BoldBI.Identifier : AppBranding.BoldReports.Identifier;
+}
+
+<div role="tabpanel" class="tab-pane active" id="application-tab">
+    <div class="admin-page-body col-lg-12 col-md-12 col-sm-12 col-xs-12 no-padding">
+        <div class="img-view-holder col-lg-2 col-md-2 col-sm-12 col-xs-12">
+            <div data-id="application-logo" class="lazyload img-loader" data-src="@Url.Content(Model.Tenant.DNS + "/" + CloudAppConfig.TenantIdentifierPrefix + "/" + Model.Tenant.TenantIdentifier + "/get-client-logo")" data-alt="boldbilogo" data-default="this.onerror=null;this.src='/Content/Images/@tenantImageType/Application/@IconFileNames.LoginLogo'" data-width="110px" data-height="25px"></div>
+        </div>
+        <div id="edit-application-form-div" class="col-lg-10 col-md-10 col-sm-12 col-xs-12 no-padding margin-top10">
+            <form class="row admin-page-form" autocomplete="off">
+                @Html.HiddenFor(tenantInfo => tenantInfo.TenantInfoId, new { id = "application-id" })
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 form-group">
+                    @Html.Label("application-name", "Site name", new { @class = "app-textbox-label col-lg-2 col-md-2 col-sm-3 col-xs-4" })
+                    <div class="form-input-field col-lg-4 col-md-5 col-sm-6 col-xs-8 application-name">
+                        @Html.DisplayFor(tenantInfo => tenantInfo.Tenant.TenantName)
+                    </div>
+                </div>
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 form-group ">
+                    @Html.Label("application-url", "Site URL", new { @class = "app-textbox-label col-lg-2 col-md-2 col-sm-3 col-xs-4" })
+                    <div class="form-input-field col-lg-4 col-md-5 col-sm-6 col-xs-8 application-url active ">
+                        <a title=@Html.Raw(Model.Tenant.DNS + "/" + CloudAppConfig.TenantIdentifierPrefix + "/" + Model.Tenant.TenantIdentifier) data-toggle="tooltip" href=@Html.Raw(Model.Tenant.DNS + "/" + CloudAppConfig.TenantIdentifierPrefix + "/" + Model.Tenant.TenantIdentifier)>@Html.Raw(Model.Tenant.DNS + "/" + CloudAppConfig.TenantIdentifierPrefix + "/" + Model.Tenant.TenantIdentifier) </a>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

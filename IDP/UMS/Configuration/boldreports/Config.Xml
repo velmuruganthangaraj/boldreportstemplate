@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<SystemSettings xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <CopyrightInformation>Copyright &amp;copy; 2001 - $$CurrentYear$$ Syncfusion Inc.   |   All Rights Reserved.</CopyrightInformation>
+  <IsEnableCopyrightInfo>true</IsEnableCopyrightInfo>
+  <IsEnablePoweredBySyncfusion>true</IsEnablePoweredBySyncfusion>
+  <IsShowPoweredBySyncfusion>true</IsShowPoweredBySyncfusion>
+  <OrganizationName>Bold ID</OrganizationName>
+  <SqlConfiguration>
+  </SqlConfiguration>
+  <StorageType>0</StorageType>
+  <WelcomeNoteText>Welcome to Bold Reports On-Premise</WelcomeNoteText>
+  <TimeFormat>false</TimeFormat>
+  <DRM>YdFE7XEmxhtsqxqJXWKDRlUrHjwR6eVatFGhbOkPMAAh0+copHpIKEhbc2nrRNtZyprUuKdSgByNCZIqPOUzpx6P//NxCYF2E71GtvEyHq+S+QslUjNs344m0yslc+0+B0NaUtlB4l8ndOb6Zzxcxw8v3hfWtQyvlyz/43hLtm0+SUsBFZjw8FeH/9JLtyzZL3GIFqhGaWkJ+FJFDiCrVoi89hb4lffnGzEWpv8G4a290tQjyNpty3jSDvtYrMPsFMvoy3us+iGhl3TzL+F7aPP+TZoUDNeQKNcH5Qc8fpSej4lNslVw/nNbb+o27RCyZjrHQ+kUgZ+iThVQ9ylOa9+CAuQHxAuG06IFxbqwHzftKRWMPdib8khdqKxgDUsNVcf68LgCy847SHToGeyiryBkR8BPBaPsIhk1qqBgjyK+u5FlULnvr3DnM7kd/e9WGc1jOA4ZLcWetJQRbw40opYOBcqrItt6+0lLI1ukyrqPsUHo0LE9aXuhsYFctkjx5s7T4TxAWsFQkDh6PtxYwK6rcFZY0kyLcWV0LDQzwDS0ViZrUAIT+ncNMyULwNi8Azt1RhKxY0Q0B0dZLGAVZRllPDya4vAagd5rxX65IH8qqtdw/jL43Ne+Z1F5q1ABnuR6ci7mv4gNF7eLSpQ6NBnPMRGnkBt7GwrgX16OCqwTfeROmNE+LGFS6GWfb+ekQuibgBIws4NYjeiaAzVbPw84Jzb24lKH35O8AtZkQ+uRKH33dv1hc90Cb4CKe6TvEj/vRUt8O/WZeGPhGuIJFw==</DRM>
+  <InternalAppBIUrl>
+  </InternalAppBIUrl>
+  <InternalAppReportUrl>http://localhost:59322/reporting</InternalAppReportUrl>
+  <InternalAppClientId>cca29f68-5057-4fa6-bf3b-15dc547ddd2c</InternalAppClientId>
+  <InternalAppClientSecret>ocGd2ySJWSVDtVQ0AR21ZbzrGwBjS/1EMBj4PhwjPGGDKmYlbcqODzRStP7VNgf96qjPZXOQPl+Hpv4/UZkrUw==</InternalAppClientSecret>
+</SystemSettings>

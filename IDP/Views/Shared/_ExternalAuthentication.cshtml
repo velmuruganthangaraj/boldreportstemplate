@@ -1,0 +1,76 @@
+﻿@using Microsoft.Owin.Security
+@{
+    var loginProviders = Context.GetOwinContext().Authentication.GetExternalAuthenticationTypes().ToList();
+    var showExternalAuthentication = loginProviders.Any();
+    var controllerName = HttpContext.Current.Request.RequestContext.RouteData.Values["controller"].ToString();
+    var loginAction = ViewBag.ReturnURL != null ? Url.Action("ExternalLogin", controllerName) + "?returnUrl=" + Url.Encode(ViewBag.ReturnURL.ToString()) : Url.Action("ExternalLogin", controllerName);
+    var canShowThirdPartyLogins = new GlobalAppSettings().GetLicenseSettings().Products.Any(x => x.Plan.EnterpriseFeatures.ThirdPartyLogins);
+    var syncfusionLogin = ViewBag.ReturnURL != null ? Url.Action("SyncfusionLogin", "Accounts") + "?returnUrl=" + Url.Encode(ViewBag.ReturnURL.ToString()) : Url.Action("SyncfusionLogin", "Accounts");
+    var microsoftLogoLink = CloudAppConfig.IsSelfHosted ? GlobalAppSettings.CdnDomain + "/static/logos/v1/" + IconFileNames.Micrisoft : GlobalAppSettings.SystemSettings.CDNLink + "/images/common/application/microsoft.png";
+    var windowsADclass = showExternalAuthentication ? "col-xs-6 no-padding " : string.Empty;
+    var styleLeft = showExternalAuthentication ? "20px" : "0";
+}
+@if (showExternalAuthentication || CloudAppConfig.IsSelfHosted)
+{
+    <div class="external-container" style="@((canShowThirdPartyLogins) ? string.Empty : "display:none")">
+        <div class="divider-container col-xs-12">
+            <div class="line col-xs-4"></div><div class="content text-body">or Connect with</div><div class="line right col-xs-4"></div>
+        </div>
+        <div id="alternative-login">
+            <div class="page-wrapper">
+                @if (controllerName.ToLower() == "authorization")
+                {
+                    <input id="external-authentication-client-id" type="hidden" name="clientId" value="@ViewBag.ClientId" />
+                }
+                <div class="col-xs-12 no-padding" style="left: @styleLeft">
+                    @if (showExternalAuthentication)
+                    {
+                        var ssoProvider = loginProviders.FirstOrDefault();
+
+                        <form method="post" action="@loginAction">
+                            <div class="col-xs-6 no-padding login-provider">
+                                @Html.AntiForgeryToken()
+                                @Html.Hidden("provider", ssoProvider.AuthenticationType)
+                                <input type="hidden" id="azure-email" name="email" />
+
+                                <button type="submit" class="link-button button-style" id="windows-login">
+                                    <img alt="microsoft" src="@microsoftLogoLink" onerror="if (this.src != '@Url.Content("~/content/images/common/application/microsoft.png")') this.src = '@Url.Content("~/content/images/common/application/microsoft.png")';" />
+                                </button>
+                                <div id="adfs-login-text" class="login-provider-name">Microsoft ADFS</div>
+                                <div id="validate-azure-user" class="error-message validation-holder">
+                                </div>
+                            </div>
+                        </form>
+                        if (!CloudAppConfig.IsSelfHosted)
+                        {
+                            <div class="col-xs-6 no-padding login-provider">
+                                <button type="button" data-login-url="@syncfusionLogin" class="link-button button-style" id="syncfusion-login">
+                                    <img alt="syncfusion" src="@GlobalAppSettings.CdnDomain/static/logos/v1/@IconFileNames.Syncfusion" />
+                                </button>
+                                <div id="syncfusion-login-text" class="login-provider-name">Syncfusion</div>
+                                <div id="validate-syncfusion-user" class="error-message validation-holder">
+                                </div>
+                            </div>
+                        }
+
+                    }
+
+                    @if (CloudAppConfig.IsSelfHosted)
+                    {
+                        <form id="login-button-windows">
+                            @Html.AntiForgeryToken()
+                            <div class="windows-ad-login @windowsADclass">
+                                <button type="submit" class="link-button button-style">
+                                    <i class="su su-ms-adfs"></i>
+                                </button>
+                                <div class="windows-ad-login-text">Windows AD</div>
+                                <div id="validate-windows-ad-user" class="error-message validation-holder">
+                                </div>
+                            </div>
+                        </form>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+}
