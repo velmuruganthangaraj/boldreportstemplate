@@ -64,7 +64,7 @@
             "webSocketsEnabled": true,
             "alwaysOn": true,
             "remoteDebuggingEnabled": false,
-            "remoteDebuggingVersion": "VS2015",
+            "remoteDebuggingVersion": "VS2017",
             "virtualApplications": [
               {
                 "virtualPath": "/",
