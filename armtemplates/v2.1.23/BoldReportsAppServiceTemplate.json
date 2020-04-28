@@ -9,6 +9,27 @@
       "metadata": {
         "description": "App name for Bold Reports Server. The name must be between 3 and 24 characters long, and can contain only numbers and lowercase letters."
       }
+    },
+    "storageAccountName": {
+      "type": "string",
+      "maxLength": 24,
+      "minLength": 3,
+      "metadata": {
+        "description": "Storage account name for Report Server. The name must be between 3 to 24 characters long, and can contain only numbers and lowercase letters."
+      },
+      "defaultValue": "storageaccountname"
+    },
+    "storageAccountType": {
+      "type": "string",
+      "allowedValues": [
+        "Standard_LRS",
+        "Standard_GRS",
+        "Standard_RAGRS"
+      ],
+      "metadata": {
+        "description": "Type of the storage account created"
+      },
+      "defaultValue": "Standard_LRS"
     }
   },
   "variables": {
@@ -26,7 +47,9 @@
           "contentVersion": "1.0.0.0"
         },
         "parameters": {
-          "WebAppName": { "value": "[parameters('WebAppName')]" }
+          "WebAppName": { "value": "[parameters('WebAppName')]" },
+          "storageAccountName": { "value": "[parameters('storageAccountName')]" },
+          "storageAccountType": { "value": "[parameters('storageAccountType')]" }
         }
       }
     }

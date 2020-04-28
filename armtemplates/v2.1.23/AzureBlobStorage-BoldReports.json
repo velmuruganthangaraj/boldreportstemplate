@@ -7,6 +7,24 @@
       "metadata": {
         "description": "App name for Bold Reports Server. The name must be between 3 and 24 characters long, and can contain only numbers and lowercase letters."
       }
+    },
+    "storageAccountName": {
+      "type": "string",
+      "metadata": {
+        "description": "Storage account name for Bold Reports Server. The name must be between 3 to 24 characters long, and can contain only numbers and lowercase letters."
+      }
+    },
+    "storageAccountType": {
+      "type": "string",
+      "allowedValues": [
+        "Standard_LRS",
+        "Standard_GRS",
+        "Standard_RAGRS"
+      ],
+      "metadata": {
+        "description": "Type of the storage account created"
+      },
+      "defaultValue": "Standard_LRS"
     }
   },
   "variables": {
@@ -111,18 +129,38 @@
           "apiVersion": "2015-08-01",
           "dependsOn": [
             "[concat('Microsoft.Web/sites/', parameters('WebAppName'))]",
-            "web"
+            "web",
+            "[concat('Microsoft.Storage/storageAccounts/', parameters('storageAccountName'))]"
           ],
           "tags": {
             "displayName": "WebAppSettings"
           },
           "properties": {
+            "AzureStorageAccountName": "[parameters('storageAccountName')]",
+            "AzureStorageBlobServiceEndpoint": "[concat('https://',parameters('storageAccountName'), '.blob.core.windows.net/')]",
+            "AzureStorageAccessKey": "[listKeys(resourceId('Microsoft.Storage/storageAccounts', parameters('storageAccountName')), providers('Microsoft.Storage', 'storageAccounts').apiVersions[0]).keys[0].value]",
+            "AzureStorageContainerName": "syncfusionreportcontainer",
+            "AzureStorageConnectionType": "https",
+            "AzureStorageBlobURL": "[concat('https://',parameters('storageAccountName'), '.blob.core.windows.net/')]",
             "StorageType": "AzureBlob",
             "IsAzureApplication": "true",
             "log4net.Config": "logs\\log4net.config"
           }
         }
       ]
+    },
+    {
+      "name": "[parameters('storageAccountName')]",
+      "type": "Microsoft.Storage/storageAccounts",
+      "location": "[resourceGroup().location]",
+      "apiVersion": "2015-06-15",
+      "dependsOn": [],
+      "tags": {
+        "displayName": "storageaccount"
+      },
+      "properties": {
+        "accountType": "[parameters('storageAccountType')]"
+      }
     }
   ]
 }
