@@ -95,15 +95,19 @@
                 "virtualPath": "/ums",
                 "physicalPath": "site\\wwwroot\\IDP\\UMS"
               },
-			  {
+              {
                 "virtualPath": "/reporting",
                 "physicalPath": "site\\wwwroot\\Report Server"
               },
-			  {
+              {
                 "virtualPath": "/reporting/api",
                 "physicalPath": "site\\wwwroot\\Report Server\\API"
               },
-			  {
+              {
+                "virtualPath": "/reporting/jobs",
+                "physicalPath": "site\\wwwroot\\Report Server\\Jobs"
+              },
+              {
                 "virtualPath": "/reporting/reportservice",
                 "physicalPath": "site\\wwwroot\\Report Server\\ReportService"
               }
