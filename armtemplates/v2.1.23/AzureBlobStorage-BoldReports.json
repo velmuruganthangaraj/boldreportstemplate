@@ -149,7 +149,8 @@
             "IdP:StorageType": "AzureBlob",
             "StorageType": "AzureBlob",
             "IsAzureApplication": "true",
-            "log4net.Config": "logs\\log4net.config"
+            "log4net.Config": "logs\\log4net.config",
+            "WEBSITE_DYNAMIC_CACHE": "0"
           }
         }
       ]
